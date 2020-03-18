@@ -9,7 +9,9 @@ import { isPlatformBrowser } from '@angular/common';
 export class PublicPageComponent implements OnInit {
 
  renderer: string;
-
+  /**
+   *  Returns whether a platform id represents a browser platform or Server Platform.
+   */
   constructor(@Inject(PLATFORM_ID) platformId:any) { 
     this.renderer = isPlatformBrowser(platformId) ? "Browser" : "serve";
     console.log(isPlatformBrowser(platformId));
