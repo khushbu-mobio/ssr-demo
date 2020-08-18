@@ -10,7 +10,7 @@ export class PublicPageComponent implements OnInit {
 
  renderer: string;
   /**
-   *  Returns whether a platform id represents a browser platform or Server Platform.
+   *  Returns whether a platform id represents a browser platform or Server.
    */
   constructor(@Inject(PLATFORM_ID) platformId:any) { 
     this.renderer = isPlatformBrowser(platformId) ? "Browser" : "serve";
