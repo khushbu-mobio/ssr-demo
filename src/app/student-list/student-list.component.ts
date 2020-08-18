@@ -12,30 +12,20 @@ export class StudentListComponent implements OnInit {
   ngOnInit() {
   }
 
-  /* An empty array that is responsible 
-  to add a division */
-public items = []; 
-/* A two-way binding performed which 
-  pushes text on division */
+  public items = [];
+  public name;
 
-public name;
+  public addToList() {
+    if (this.name == '') {
+      alert("please fill studen name")
+    }
+    else {
+      this.items.push(this.name);
+      this.name = '';
+    }
+  }
 
-/* When input is empty, it will 
-  not create a new division */
-public addToList() { 
-   if (this.name == '') { 
-     alert("please fill studen name")
-   } 
-   else { 
-       this.items.push(this.name); 
-       this.name = ''; 
-   } 
-} 
-
-/* This function takes to input the 
-  task, that has to be deleted*/
-public deleteName(index) { 
-   this.items.splice(index, 1); 
-} 
-
+  public deleteName(index) {
+    this.items.splice(index, 1);
+  }
 }
