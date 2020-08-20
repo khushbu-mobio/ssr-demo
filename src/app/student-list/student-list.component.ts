@@ -8,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class StudentListComponent implements OnInit {
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
   public items = [];
   public name;
 
+  ngOnInit() {
+    var getNames = JSON.parse(localStorage.getItem("names"));
+    console.log("dtaget===", getNames);
+    this.items = getNames;
+  }
   public addToList() {
     if (this.name == '') {
       alert("please fill studen name")
@@ -22,10 +23,12 @@ export class StudentListComponent implements OnInit {
     else {
       this.items.push(this.name);
       this.name = '';
+      console.log("item ==", this.items);
+      localStorage.setItem("names", JSON.stringify(this.items));
     }
   }
-
   public deleteName(index) {
     this.items.splice(index, 1);
+    localStorage.setItem("names", JSON.stringify(this.items));
   }
 }
