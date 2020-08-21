@@ -15,6 +15,7 @@ export class StudentListComponent implements OnInit {
     var getNames = JSON.parse(localStorage.getItem("names"));
     console.log("dtaget===", getNames);
     this.items = getNames;
+   
   }
   public addToList() {
     if (this.name == '') {
